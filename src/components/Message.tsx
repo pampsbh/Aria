@@ -25,9 +25,21 @@ export function Message({ message }: MessageProps) {
     <div className={`flex ${isEnviada ? 'justify-end' : 'justify-start'} mb-4`}>
       <div className={`max-w-[70%] ${isEnviada ? 'items-end' : 'items-start'} flex flex-col gap-2`}>
         {!isEnviada && (
-          <span className="text-secondary-foreground px-2 text-[12px]">
-            {message.remetente}
-          </span>
+          <div className="flex items-center gap-2 px-2">
+            <span className="text-secondary-foreground text-[12px]">
+              {message.remetente}
+            </span>
+            <span className="text-muted-foreground text-[11px]">
+              {message.timestamp}
+            </span>
+          </div>
+        )}
+        {isEnviada && (
+          <div className="flex items-center gap-2 px-2">
+            <span className="text-muted-foreground text-[11px]">
+              {message.timestamp}
+            </span>
+          </div>
         )}
         <div 
           className={`
@@ -63,9 +75,6 @@ export function Message({ message }: MessageProps) {
             </div>
           )}
         </div>
-        <span className="text-secondary-foreground px-2 text-[14px]">
-          {message.timestamp}
-        </span>
       </div>
     </div>
   );

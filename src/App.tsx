@@ -1316,10 +1316,10 @@ export default function App() {
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Painel Esquerdo - Solicitações */}
       <div className={`relative transition-all duration-300 ${leftPanelOpen ? 'w-[280px]' : 'w-0'}`}>
-        {/* Botão Toggle Esquerdo - Sutil no Topo */}
+        {/* Botão Toggle Esquerdo - No meio vertical */}
         <button
           onClick={() => setLeftPanelOpen(!leftPanelOpen)}
-          className="absolute top-3 -right-3 z-10 bg-card border border-border rounded-md p-1.5 hover:bg-muted transition-all shadow-md hover:shadow-lg"
+          className="absolute top-1/2 -translate-y-1/2 -right-3 z-10 bg-transparent hover:bg-card/50 border border-border rounded-md p-1.5 transition-all"
           title={leftPanelOpen ? 'Recolher Solicitações' : 'Expandir Solicitações'}
         >
           {leftPanelOpen ? <ChevronLeft size={16} className="text-secondary-foreground" /> : <ChevronRight size={16} className="text-secondary-foreground" />}
@@ -1350,10 +1350,10 @@ export default function App() {
 
       {/* Painel Direito - Informações */}
       <div className={`relative transition-all duration-300 ${rightPanelOpen ? 'w-[300px]' : 'w-0'}`}>
-        {/* Botão Toggle Direito - Sutil no Topo */}
+        {/* Botão Toggle Direito - No meio vertical */}
         <button
           onClick={() => setRightPanelOpen(!rightPanelOpen)}
-          className="absolute top-3 -left-3 z-10 bg-card border border-border rounded-md p-1.5 hover:bg-muted transition-all shadow-md hover:shadow-lg"
+          className="absolute top-1/2 -translate-y-1/2 -left-3 z-10 bg-transparent hover:bg-card/50 border border-border rounded-md p-1.5 transition-all"
           title={rightPanelOpen ? 'Recolher Informações' : 'Expandir Informações'}
         >
           {rightPanelOpen ? <ChevronRight size={16} className="text-secondary-foreground" /> : <ChevronLeft size={16} className="text-secondary-foreground" />}

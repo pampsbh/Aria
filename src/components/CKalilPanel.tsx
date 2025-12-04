@@ -221,39 +221,19 @@ export function CKalilPanel({ operacao }: CKalilPanelProps) {
   return (
     <div className="w-[300px] bg-card border-l border-border flex flex-col h-screen overflow-y-auto">
       {/* Header */}
-      <div className="p-3 border-b border-border">
-        <h4 className="text-secondary-foreground font-normal text-[16px] font-[Lato]">Informações da Operação</h4>
-      </div>
-
-      {/* Informações da Operação */}
-      <div className="p-3 border-b border-border space-y-2.5">
-        <div>
-          <p className="text-muted-foreground text-[12px] mb-0.5">ID da Operação</p>
-          <p className="text-foreground text-[13px]">{operacao.idExterno}</p>
-        </div>
-        
-        <div>
-          <p className="text-muted-foreground text-[12px] mb-0.5">Proposta</p>
-          <p className="text-foreground text-[13px]">{operacao.valor}</p>
-        </div>
-        
-        <div>
-          <p className="text-muted-foreground text-[12px] mb-0.5">Ente Devedor</p>
-          <p className="text-foreground text-[13px]">{operacao.enteDevedor}</p>
-        </div>
-
-        {operacao.criado && (
-          <div>
-            <p className="text-muted-foreground text-[12px] mb-0.5">Envio para o Opera</p>
-            <p className="text-foreground text-[13px]">{operacao.criado}</p>
-          </div>
-        )}
+      <div className="p-3 border-b border-border flex items-center justify-between">
+        <h4 className="text-secondary-foreground font-normal text-[16px] font-[Lato]">Circuito Kalil</h4>
+        <button
+          onClick={() => window.open('https://opera.com/circuito-kalil', '_blank')}
+          className="text-secondary-foreground hover:text-primary transition-colors"
+          title="Abrir Circuito Kalil em nova aba"
+        >
+          <ExternalLink size={16} />
+        </button>
       </div>
 
       {/* C-Kalil */}
       <div className="p-3 flex-1">
-        <h4 className="mb-3 text-secondary-foreground">Circuito Kalil</h4>
-        
         <div className="space-y-1">
           {/* Conferência inicial */}
           {renderEtapa(etapasEstrutura[0])}
@@ -286,24 +266,6 @@ export function CKalilPanel({ operacao }: CKalilPanelProps) {
             </div>
           </div>
         )}
-
-        {/* Botão Acessar no Opera */}
-        <button 
-          className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-          onClick={() => window.open('https://opera.com', '_blank')}
-        >
-          <ExternalLink size={14} />
-          Acessar no Opera
-        </button>
-
-        {/* Botão Acessar perfil no Salesforce */}
-        <button 
-          className="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2.5 border border-border text-secondary-foreground rounded-lg hover:bg-muted hover:border-primary hover:text-primary transition-colors"
-          onClick={() => window.open('https://salesforce.com', '_blank')}
-        >
-          <ExternalLink size={14} />
-          Acessar perfil no Salesforce
-        </button>
       </div>
     </div>
   );

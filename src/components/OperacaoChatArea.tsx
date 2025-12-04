@@ -201,9 +201,12 @@ export function OperacaoChatArea({
             <div className="flex-1 min-w-0">
               <div className="flex items-baseline gap-2 flex-wrap">
                 <h3 className="text-foreground">{operacao.cedente}</h3>
-                <p className="text-muted-foreground text-[12px]">{operacao.idExterno}</p>
+                <span className="text-muted-foreground text-[12px]">#{operacao.idExterno}</span>
+                <span className="text-muted-foreground text-[12px]">•</span>
+                <p className="text-secondary-foreground text-[13px]">{operacao.valor}</p>
+                <span className="text-muted-foreground text-[12px]">•</span>
+                <p className="text-secondary-foreground text-[13px]">{operacao.enteDevedor}</p>
               </div>
-              <p className="text-secondary-foreground text-[13px] mt-0.5">{operacao.valor} • {operacao.enteDevedor}</p>
             </div>
           </div>
         </div>
